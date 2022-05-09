@@ -24,9 +24,9 @@ public class HotelesController {
 			return service.buscarHotel(nombre);
 		}
 		
-		@GetMapping(value ="Hoteles",produces=MediaType.APPLICATION_JSON_VALUE)
+		@GetMapping(value ="HotelesDisponibles",produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Hotel> hoteles(){
-			return service.buscarHoteles();
+			return service.buscarHotelesDisponibles();
 		}
 		
 }

@@ -7,5 +7,5 @@ import model.Hotel;
 public interface HotelesService {
 
 	Hotel buscarHotel(String nombre);
-	List<Hotel> buscarHoteles();
+	List<Hotel> buscarHotelesDisponibles();
 }
