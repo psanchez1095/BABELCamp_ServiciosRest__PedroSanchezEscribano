@@ -35,6 +35,11 @@ public class HotelesServiceImpl implements HotelesService {
 				.collect(Collectors.toList());
 	}
 
+	@Override
+	public Hotel buscarHotel(int id) {
+		return hotelesDao.findById(id).orElse(null);
+	}
+
 
 
 	

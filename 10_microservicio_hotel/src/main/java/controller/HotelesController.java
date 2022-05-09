@@ -18,6 +18,10 @@ public class HotelesController {
 		@Autowired
 		HotelesService service;
 		
+		@GetMapping(value ="HotelById/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
+		public Hotel buscarHotel(@PathVariable("id") int id){
+			return service.buscarHotel(id);
+		}
 	
 		@GetMapping(value ="Hotel/{nombre}",produces=MediaType.APPLICATION_JSON_VALUE)
 		public Hotel buscarHotel(@PathVariable("nombre") String nombre){
