@@ -22,9 +22,9 @@ import service.ReservasService;
 public class ReservasController {
 		@Autowired
 		ReservasService service;
-		@PostMapping(value="Reserva",consumes=MediaType.APPLICATION_JSON_VALUE)
-		public void alta(@RequestBody ReservaDto a) {
-			service.altaReserva(a);
+		@PostMapping(value="Reserva",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+		public Reserva alta(@RequestBody ReservaDto a) {
+			return service.altaReserva(a);
 		}
 		@GetMapping(value="Reservas",produces=MediaType.APPLICATION_JSON_VALUE)
 		public List<Reserva>  buscarReservas() {
