@@ -41,6 +41,11 @@ public class VuelosServiceImpl implements VuelosService {
 		return aux;
 	}
 
+	@Override
+	public Vuelo buscarVuelo(int id) {
+		return vuelosDao.findById(id).orElse(null);
+	}
+
 	
 	}
 

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import model.Vuelo;
 import service.VuelosService;
 
@@ -29,6 +28,11 @@ public class VuelosController {
 		@PutMapping(value="Vuelo",produces=MediaType.APPLICATION_JSON_VALUE)
 		public Vuelo actualizarVuelo(@RequestParam("idVuelo") int idVuelo,@RequestParam("plazasReservadas") int plazasReservadas) {
 			return service.actualizarVuelo(idVuelo, plazasReservadas);
+		}
+		
+		@GetMapping(value ="Vuelo/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
+		public Vuelo buscarVuelo(@PathVariable("id") int id){
+			return service.buscarVuelo(id);
 		}
 		
 	

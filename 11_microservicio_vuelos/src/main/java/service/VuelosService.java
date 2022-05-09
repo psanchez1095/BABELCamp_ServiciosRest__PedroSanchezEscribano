@@ -10,4 +10,6 @@ public interface VuelosService {
 
 	Vuelo actualizarVuelo(int idVuelo, int plazasReservadas);
 	
+	Vuelo buscarVuelo(int id);
+	
 }
