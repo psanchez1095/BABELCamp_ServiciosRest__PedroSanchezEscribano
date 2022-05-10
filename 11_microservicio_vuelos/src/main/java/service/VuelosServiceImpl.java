@@ -33,7 +33,7 @@ public class VuelosServiceImpl implements VuelosService {
 	@Override
 	public boolean actualizarVuelo(int idVuelo, int plazasReservadas) {
 		Vuelo aux = vuelosDao.findById(idVuelo).orElse(null);
-		if(aux!=null) {
+		if(aux!=null && aux.getPlazas()-plazasReservadas >=0) {
 			aux.setPlazas(aux.getPlazas()-plazasReservadas);
 			vuelosDao.save(aux);
 			return true;
