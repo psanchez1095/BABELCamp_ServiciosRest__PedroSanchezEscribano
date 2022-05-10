@@ -3,6 +3,8 @@ package service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -31,7 +33,7 @@ public class ReservasServiceImpl implements ReservasService {
 	@Override
 	public Reserva altaReserva(ReservaDto a) {
 		
-		Vuelo vuelo = template.getForObject(urlVuelos+"/Vuelo/"+a.getVuelo(), Vuelo.class);
+		/*Vuelo vuelo = template.getForObject(urlVuelos+"/Vuelo/"+a.getVuelo(), Vuelo.class);
 		Hotel hotel = template.getForObject(urlHoteles+"/HotelById/"+a.getHotel(), Hotel.class);
 		
 		if(hotel!=null && vuelo.getPlazas() >=a.getPlazas()) {
@@ -44,7 +46,17 @@ public class ReservasServiceImpl implements ReservasService {
 			return aux;
 		}
 		return null;
-	}
+		*/
+		Reserva aux = new Reserva(a.getIdReserva(),a.getNombre(),a.getDni(),a.getHotel(),a.getVuelo());
+		ResponseEntity<String> response = template.exchange(urlVuelos+"/Vuelo/"+"?idVuelo="+a.getVuelo()+"&plazasReservadas="+a.getPlazas(), HttpMethod.PUT,null,String.class);
+		if (response.getBody().equals("true")) {
+			reservasDao.save(aux);
+			return aux;
+		}
+		else return null;
+		}
+		//METODO EXCHANGE 
+	
 
 	@Override
 	public List<Reserva> buscarReservas() {
