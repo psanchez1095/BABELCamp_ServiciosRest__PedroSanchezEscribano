@@ -28,7 +28,7 @@ public class VuelosController {
 		}
 		
 		@PutMapping(value="Vuelo",produces=MediaType.APPLICATION_JSON_VALUE)
-		public Vuelo actualizarVuelo(@RequestParam("idVuelo") int idVuelo,@RequestParam("plazasReservadas") int plazasReservadas) {
+		public boolean actualizarVuelo(@RequestParam("idVuelo") int idVuelo,@RequestParam("plazasReservadas") int plazasReservadas) {
 			return service.actualizarVuelo(idVuelo, plazasReservadas);
 		}
 		
