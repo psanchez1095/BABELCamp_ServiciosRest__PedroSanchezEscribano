@@ -57,10 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.authorizeRequests()
 		//solo los miembros del rol admin podrán realizar altas
 		//y para acceder la lista de cursos, tendrán que estar autenticados
-		.antMatchers(HttpMethod.GET,"/vuelos/*").hasRole("ADMIN")
-		.antMatchers(HttpMethod.PUT,"/vuelos/*").anonymous()
-		.antMatchers(HttpMethod.POST,"/vuelos/*").hasRole("ADMIN")
-		.antMatchers(HttpMethod.DELETE,"/vuelos/*").hasRole("OPERATOR")
+		.antMatchers(HttpMethod.GET,"/Reservas").hasRole("ADMIN")
+		.antMatchers(HttpMethod.PUT,"/Reserva/*").anonymous()
 		.and()
 		.httpBasic();
 	}
