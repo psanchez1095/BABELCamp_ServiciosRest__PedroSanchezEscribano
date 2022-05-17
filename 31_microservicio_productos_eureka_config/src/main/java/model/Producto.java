@@ -28,4 +28,3 @@ public class Producto{
 	private int stock;
 	}
 	
-

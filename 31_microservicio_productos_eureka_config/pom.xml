@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.babel.pse</groupId>
-	<artifactId>10_microservicio_hotel</artifactId>
+	<artifactId>31_microservicio_productos_eureka_config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>10_microservicio_hotel</name>
-	<description>Microservicio Hotel</description>
+	<name>31_microservicio_productos_eureka_config</name>
+	<description>Microservicio_productos</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.2</spring-cloud.version>
@@ -50,11 +50,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

@@ -22,7 +22,7 @@ public class ProductosController {
 		@Autowired
 		ProductosService service;
 		
-		@GetMapping(value ="PrecioUnitario/{id}",produces=MediaType.TEXT_PLAIN_VALUE)
+		@GetMapping(value ="PrecioUnitario/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
 		public double buscarPrecioUnitario(@PathVariable("id") int id){
 			return service.precioUnitario(id);
 		}
