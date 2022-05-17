@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: servicio-pedidos
+  cloud:
+    config:
+      uri:
+        - http://192.168.1.42:8888
