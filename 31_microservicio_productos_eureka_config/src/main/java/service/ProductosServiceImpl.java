@@ -37,7 +37,7 @@ public class ProductosServiceImpl implements ProductosService {
 	public Producto actualizarProducto(int codigoProducto, int unidadesCompradas) {
 		Producto aux = productosDao.findById(codigoProducto).orElse(null);
 		if(aux!=null) {
-			aux.setStock(unidadesCompradas);
+			aux.setStock(aux.getStock()+unidadesCompradas);
 			productosDao.save(aux);
 			return aux;
 		}
